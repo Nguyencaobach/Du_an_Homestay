@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#007AFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Innkeeper Hub"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        app:layout_constraintVertical_bias="0.65" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="31dp"
+
+        app:columnCount="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2"
+        app:layout_constraintVertical_bias="0.348">
+
+        <LinearLayout
+            android:id="@+id/roomServiceBtn"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/icon_item_margin"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp"
+            app:layout_columnWeight="1">
+
+            <ImageView
+                android:layout_width="@dimen/my_icon_size"
+                android:layout_height="@dimen/my_icon_size"
+                android:src="@drawable/images" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Room Service"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textSize="@dimen/icon_text_size" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dashboardBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/icon_item_margin"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp"
+            app:layout_columnWeight="1">
+
+            <ImageView
+                android:layout_width="@dimen/my_icon_size"
+                android:layout_height="@dimen/my_icon_size"
+                android:src="@drawable/dashboard" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dashboard"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textSize="@dimen/icon_text_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/otherServiceBtn"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/icon_item_margin"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp"
+            app:layout_columnWeight="1">
+
+            <ImageView
+                android:layout_width="@dimen/my_icon_size"
+                android:layout_height="@dimen/my_icon_size"
+                android:src="@drawable/service" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Other Service"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textSize="@dimen/icon_text_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/locationBtn"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/icon_item_margin"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp"
+            app:layout_columnWeight="1">
+
+            <ImageView
+                android:layout_width="@dimen/my_icon_size"
+                android:layout_height="@dimen/my_icon_size"
+                android:src="@drawable/location" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textSize="@dimen/icon_text_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/messageBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/icon_item_margin"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp"
+            app:layout_columnWeight="1">
+
+            <ImageView
+                android:layout_width="@dimen/my_icon_size"
+                android:layout_height="@dimen/my_icon_size"
+                android:src="@drawable/message" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Message"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textSize="@dimen/icon_text_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/customerBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/icon_item_margin"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp"
+            app:layout_columnWeight="1">
+
+            <ImageView
+                android:layout_width="@dimen/my_icon_size"
+                android:layout_height="@dimen/my_icon_size"
+                android:src="@drawable/customer" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Customer"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textSize="@dimen/icon_text_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/websiteBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/icon_item_margin"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp"
+            app:layout_columnWeight="1">
+
+            <ImageView
+                android:layout_width="@dimen/my_icon_size"
+                android:layout_height="@dimen/my_icon_size"
+                android:src="@drawable/web" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Website"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textSize="@dimen/icon_text_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/costsBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/icon_item_margin"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp"
+            app:layout_columnWeight="1">
+
+            <ImageView
+                android:layout_width="@dimen/my_icon_size"
+                android:layout_height="@dimen/my_icon_size"
+                android:src="@drawable/costs" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Costs Incurred"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textSize="@dimen/icon_text_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/instructionBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/icon_item_margin"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp"
+            app:layout_columnWeight="1">
+
+            <ImageView
+                android:layout_width="@dimen/my_icon_size"
+                android:layout_height="@dimen/my_icon_size"
+                android:src="@drawable/instruction" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Instructions"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textSize="@dimen/icon_text_size" />
+
+        </LinearLayout>
+
+    </androidx.gridlayout.widget.GridLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
