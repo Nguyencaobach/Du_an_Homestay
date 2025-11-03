@@ -4,10 +4,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.managementapplication.R
 
-class RoomTypeAdapter(private val roomTypes: MutableList<RoomType>) : RecyclerView.Adapter<RoomTypeAdapter.RoomTypeViewHolder>() {
+class RoomTypeAdapter : ListAdapter<RoomType, RoomTypeAdapter.RoomTypeViewHolder>(RoomTypeDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RoomTypeViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.room_type_item, parent, false)
@@ -15,15 +17,8 @@ class RoomTypeAdapter(private val roomTypes: MutableList<RoomType>) : RecyclerVi
     }
 
     override fun onBindViewHolder(holder: RoomTypeViewHolder, position: Int) {
-        val roomType = roomTypes[position]
+        val roomType = getItem(position)
         holder.bind(roomType)
-    }
-
-    override fun getItemCount() = roomTypes.size
-
-    fun addRoomType(roomType: RoomType) {
-        roomTypes.add(roomType)
-        notifyItemInserted(roomTypes.size - 1)
     }
 
     class RoomTypeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -35,6 +30,17 @@ class RoomTypeAdapter(private val roomTypes: MutableList<RoomType>) : RecyclerVi
             tvRoomName.text = roomType.name
             tvRoomPrice.text = "Price: ${roomType.price}"
             tvRoomDescription.text = roomType.description
+        }
+    }
+
+    // Class này giúp ListAdapter biết item nào đã thay đổi
+    class RoomTypeDiffCallback : DiffUtil.ItemCallback<RoomType>() {
+        override fun areItemsTheSame(oldItem: RoomType, newItem: RoomType): Boolean {
+            return oldItem.id == newItem.id
+        }
+
+        override fun areContentsTheSame(oldItem: RoomType, newItem: RoomType): Boolean {
+            return oldItem == newItem
         }
     }
 }

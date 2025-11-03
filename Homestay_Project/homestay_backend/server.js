@@ -49,6 +49,12 @@ app.get('/db-test', async (req, res) => {
 // Mọi request tới /api/auth/login sẽ được chuyển tới authRoutes
 app.use('/api/auth', authRoutes);
 
+// Import routes
+const roomTypeRoutes = require('./routes/roomTypeRoutes');
+
+// Sử dụng routes với tiền tố /api
+app.use('/api', roomTypeRoutes);
+
 
 // --- 5. KHỞI CHẠY SERVER ---
 app.listen(PORT, () => {

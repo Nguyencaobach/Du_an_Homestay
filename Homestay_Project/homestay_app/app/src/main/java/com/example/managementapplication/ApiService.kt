@@ -1,38 +1,29 @@
-package com.example.managementapplication.auth
+package com.example.managementapplication
 
-import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.POST
-
+import com.example.managementapplication.auth.LoginRequest
+import com.example.managementapplication.auth.LoginResponse
 import com.example.managementapplication.room_service.edit_room.RoomType
-import retrofit2.http.GET
-// (Gói của bạn)
+import retrofit2.Call
+import retrofit2.http.*
 
 interface ApiService {
 
-    /**
-     * Định nghĩa API đăng nhập.
-     * @POST: Sử dụng phương thức POST.
-     * "api/auth/login": Đây là đường dẫn (endpoint) trên server Node.js của bạn.
-     * (Nó được nối với BASE_URL)
-     */
+    // Giữ nguyên hàm login dùng Call nếu bạn muốn
     @POST("api/auth/login")
-    fun login(
-        // @Body: Gửi đối tượng LoginRequest (gồm username, password)
-        //        trong phần thân (body) của request
-        @Body request: LoginRequest
-    ): Call<LoginResponse> // Kiểu dữ liệu mong đợi nhận về là LoginResponse
+    fun login(@Body request: LoginRequest): Call<LoginResponse>
 
-    // --- THÊM CÁC HÀM MỚI CHO "LOẠI PHÒNG" VÀO ĐÂY ---
-    /**
-     * API 1: Lấy tất cả Loại phòng
-     */
+    // --- CÁC HÀM MỚI --- 
+    // Chuyển sang suspend function, Retrofit sẽ tự động xử lý background thread
+    // Bỏ Call<> và trả về trực tiếp List<RoomType>
     @GET("api/room-types")
-    fun getAllRoomTypes(): Call<List<RoomType>>
+    suspend fun getAllRoomTypes(): List<RoomType>
 
-    /**
-     * API 2: Tạo một Loại phòng mới
-     */
     @POST("api/room-types")
-    fun createRoomType(@Body roomTypeData: RoomType): Call<RoomType>
+    suspend fun createRoomType(@Body roomTypeData: RoomType): RoomType
+
+    @PUT("api/room-types/{id}")
+    suspend fun updateRoomType(
+        @Path("id") roomTypeId: String,
+        @Body roomTypeData: RoomType
+    ): RoomType
 }
