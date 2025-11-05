@@ -32,7 +32,7 @@
             android:exported="false"
             android:parentActivityName=".HomeActivity"/>
         <activity
-            android:name=".LocationActivity"
+            android:name=".RoomBookingActivity"
             android:exported="false"
             android:parentActivityName=".HomeActivity"/>
         <activity

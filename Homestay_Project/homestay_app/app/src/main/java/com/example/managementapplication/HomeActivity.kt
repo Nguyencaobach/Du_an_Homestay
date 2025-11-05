@@ -14,7 +14,7 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var dashboardButton: LinearLayout
     private lateinit var otherServiceButton: LinearLayout
 
-    private lateinit var locationButton: LinearLayout
+    private lateinit var bookingRoomButton: LinearLayout
     private lateinit var messageButton: LinearLayout
     private lateinit var customerButton: LinearLayout
 
@@ -59,9 +59,9 @@ class HomeActivity : AppCompatActivity() {
 
         // --- 4. Xử ly nút Location ---
 
-        locationButton = findViewById(R.id.locationBtn)
-        locationButton.setOnClickListener {
-             val intent = Intent(this, LocationActivity::class.java)
+        bookingRoomButton = findViewById(R.id.roomBookingBtn)
+        bookingRoomButton.setOnClickListener {
+             val intent = Intent(this, RoomBookingActivity::class.java)
              startActivity(intent)
         }
 

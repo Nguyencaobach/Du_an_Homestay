@@ -12,4 +12,6 @@ router.post('/room-types', roomTypeController.createRoomType);
 // PUT http://localhost:3000/api/room-types/:id
 router.put('/room-types/:id', roomTypeController.updateRoomType);
 
+router.delete('/room-types/:id', roomTypeController.deleteRoomType);
+
 module.exports = router;

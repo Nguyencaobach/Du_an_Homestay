@@ -1,4 +1,4 @@
-package com.example.managementapplication.other_service
+package com.example.managementapplication.other_service.food_table
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

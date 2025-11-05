@@ -13,10 +13,14 @@ const update = (id, { name, price, description }) => {
     return db.query(queryText, [name, price, description, id]);
 }
 
-// Bạn có thể thêm các hàm khác như getById, delete...
+const deleteById = (id) => {
+  const queryText = 'DELETE FROM room_types WHERE id = $1';
+  return db.query(queryText, [id]);
+};
 
 module.exports = {
   getAll,
   create,
   update,
+  deleteById,
 };

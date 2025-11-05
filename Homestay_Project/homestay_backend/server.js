@@ -56,6 +56,10 @@ const roomTypeRoutes = require('./routes/roomTypeRoutes');
 app.use('/api', roomTypeRoutes);
 
 
+const bookingRoutes = require('./routes/bookingRoutes');
+
+app.use('/api', bookingRoutes);
+
 // --- 5. KHỞI CHẠY SERVER ---
 app.listen(PORT, () => {
     console.log(`Server đang lắng nghe trên cổng ${PORT}`);

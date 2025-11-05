@@ -5,15 +5,16 @@ import com.example.managementapplication.RetrofitClient
 
 class RoomTypeRepository {
 
-    // Lấy instance của ApiService
     private val apiService: ApiService by lazy {
         RetrofitClient.instance
     }
 
-    // Các hàm này giờ sẽ gọi trực tiếp suspend function từ ApiService
     suspend fun getAllRoomTypes() = apiService.getAllRoomTypes()
 
     suspend fun createRoomType(roomType: RoomType) = apiService.createRoomType(roomType)
 
     suspend fun updateRoomType(id: String, roomType: RoomType) = apiService.updateRoomType(id, roomType)
+
+    // HÀM MỚI
+    suspend fun deleteRoomType(id: String) = apiService.deleteRoomType(id)
 }

@@ -3,6 +3,8 @@ package com.example.managementapplication.other_service
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.managementapplication.other_service.food_table.FoodTableFragment
+import com.example.managementapplication.other_service.vehicel.VehicelFragment
 
 class OtherServicePagerAdapter(activity: FragmentActivity) : FragmentStateAdapter(activity) {
 

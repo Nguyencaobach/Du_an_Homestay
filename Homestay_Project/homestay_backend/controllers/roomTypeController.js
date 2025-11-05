@@ -33,3 +33,14 @@ exports.updateRoomType = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 }
+
+exports.deleteRoomType = async (req, res) => {
+    try {
+        const { id } = req.params; // Lấy id từ URL
+        await RoomType.deleteById(id);
+        // Trả về 204 No Content - là mã chuẩn cho việc xóa thành công
+        res.status(204).send();
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}

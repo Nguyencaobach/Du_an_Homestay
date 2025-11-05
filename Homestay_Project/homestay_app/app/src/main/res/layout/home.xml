@@ -64,7 +64,7 @@
             <ImageView
                 android:layout_width="@dimen/my_icon_size"
                 android:layout_height="@dimen/my_icon_size"
-                android:src="@drawable/images" />
+                android:src="@drawable/setting" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -135,7 +135,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/locationBtn"
+            android:id="@+id/roomBookingBtn"
 
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -151,12 +151,12 @@
             <ImageView
                 android:layout_width="@dimen/my_icon_size"
                 android:layout_height="@dimen/my_icon_size"
-                android:src="@drawable/location" />
+                android:src="@drawable/roombooking" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Location"
+                android:text="Room Booking"
                 android:textStyle="bold"
                 android:textAlignment="center"
                 android:textSize="@dimen/icon_text_size" />

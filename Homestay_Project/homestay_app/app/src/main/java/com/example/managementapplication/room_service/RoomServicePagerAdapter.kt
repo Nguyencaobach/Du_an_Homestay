@@ -3,7 +3,7 @@
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.managementapplication.room_service.BookRoomFragment
+import com.example.managementapplication.room_service.detail_room.EditBookRoomFragment
 import com.example.managementapplication.room_service.edit_room.EditRoomFragment
 
 class RoomServicePagerAdapter(activity: FragmentActivity) : FragmentStateAdapter(activity) {
@@ -17,7 +17,7 @@ class RoomServicePagerAdapter(activity: FragmentActivity) : FragmentStateAdapter
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> EditRoomFragment()    // Tab 0 -> Màn hình Sửa phòng
-            1 -> BookRoomFragment()     // Tab 1 -> Màn hình Đặt phòng
+            1 -> EditBookRoomFragment()     // Tab 1 -> Màn hình Đặt phòng
             else -> throw IllegalStateException("Vị trí tab không hợp lệ")
         }
     }
